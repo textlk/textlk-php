@@ -23,10 +23,10 @@ composer require textlk/textlk-php
 public function toTextlk($notifiable)
 {
     return (new TextLK\SMS\TextLKSMSMessage)
-        ->recipient($notifiable->country_phonecode . $notifiable->mobile) // or have multiple numbers: "recipient" => "+9476000000,+9476111000"
-        ->message($this->message)
-        ->apiKey() // optional. TEXTLK_SMS_API_KEY can be added in .env
-        ->senderId() // optional. TEXTLK_SMS_SENDER_ID can be added in .env
-        ->scheduleTime(); optional. // "2021-12-20T07:00:00Z"
+        ->recipient('YOUR_RECIPIENT_PHONE_NUMBERS_HERE') // or have multiple numbers: "recipient" => "+9476000000,+9476111000"
+        ->message('YOUR_MESSAGE_HERE')
+        ->apiKey('YOUR_API_KEY_HERE') // optional. TEXTLK_SMS_API_KEY can be added in .env
+        ->senderId('YOUR_SENDER_ID_KEY_HERE') // optional. TEXTLK_SMS_SENDER_ID can be added in .env
+        ->scheduleTime('YOUR_SCHEDULE_TIME_HERE'); optional. // "2021-12-20T07:00:00Z"
 }
 ```
