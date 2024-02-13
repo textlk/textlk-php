@@ -64,11 +64,20 @@ class TextLKSMSMessage
                 $errorMessage = 'API key cannot be empty. Set it in the constructor or add TEXTLK_SMS_API_KEY in .env';
                 throw new \InvalidArgumentException($errorMessage);
             }
+
+            if (empty($sender_id)) {
+                $this->sender_id = config('textlk.textlk.TEXTLK_SMS_SENDER_ID');
+                $sender_id = $this->sender_id;
+            }
+            
+            if (empty($sender_id)) {
+                $errorMessage = 'API key cannot be empty. Set it in the constructor or add TEXTLK_SMS_SENDER_ID in .env';
+                throw new \InvalidArgumentException($errorMessage);
+            }
             
             // Validate required parameters
             $this->validateParameter($message, 'message');
             $this->validateParameter($recipient, 'recipient');
-            $this->validateParameter($sender_id, 'sender_id');
             
             $data = array(
                 "recipient" => $recipient,
