@@ -9,15 +9,30 @@
 
 It is a PHP package that will serve as a gateway to communicate with Text.lk REST APIs.
 
-# Laravel
-
 ## Installation
 
 ```bash
 composer require textlk/textlk-php
 ```
 
-## Usage
+# Pure PHP
+
+```php
+use TextLK\SMS\TextLKMessage;
+
+$apiKey = "YOUR_TEXTLK_API_KEY";
+$textLKMessage = new TextLKMessage($apiKey);
+
+$textLKMessage
+    ->content("Hello, this is a test message.")
+    ->recipient("+1234567890") // Replace with the recipient's phone number
+    ->senderId("YOUR_SENDER_ID") // Replace with your sender ID
+    ->scheduleTime("2024-02-12T12:00:00Z"); // Replace with your desired schedule time
+
+$textLKMessage->send();
+```
+
+# Laravel
 
 ```php
 public function toTextlk($notifiable)
@@ -30,3 +45,5 @@ public function toTextlk($notifiable)
         ->scheduleTime('YOUR_SCHEDULE_TIME_HERE'); // optional. "2021-12-20T07:00:00Z"
 }
 ```
+
+
