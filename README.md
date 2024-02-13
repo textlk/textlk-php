@@ -13,6 +13,7 @@ It is a PHP package that will serve as a gateway to communicate with Text.lk RES
 
 ## Laravel
 
+```php
     public function toTextlk($notifiable)
     {
         return (new TextLK\SMS\TextLKSMSMessage)
