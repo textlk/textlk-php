@@ -9,9 +9,14 @@
 
 It is a PHP package that will serve as a gateway to communicate with Text.lk REST APIs.
 
-# Usage
+# Laravel
 
-## Laravel
+## Installation
+
+```bash
+    composer require textlk/textlk-php
+
+## Usage
 
 ```php
     public function toTextlk($notifiable)
