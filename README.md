@@ -18,18 +18,18 @@ composer require textlk/textlk-php
 # Pure PHP
 
 ```php
-use TextLK\SMS\TextLKMessage;
+use TextLK\SMS\TextLKSMSMessage;
 
-$apiKey = "YOUR_TEXTLK_API_KEY";
-$textLKMessage = new TextLKMessage($apiKey);
+$textLKSMS = new TextLKSMSMessage();
 
-$textLKMessage
-    ->content("Hello, this is a test message.")
-    ->recipient("+1234567890") // Replace with the recipient's phone number
-    ->senderId("YOUR_SENDER_ID") // Replace with your sender ID
-    ->scheduleTime("2024-02-12T12:00:00Z"); // Replace with your desired schedule time
+$textLKSMS
+    ->recipient("94712345678") // Replace with the recipient's phone number. If have multiple numbers: "recipient" => "+9476000000,+9476111000"
+    ->message("Hello, this is a test message.")
+    ->senderId("YOUR_SENDER_ID") // (optional) TEXTLK_SMS_SENDER_ID can be added in .env
+    ->apiKey('YOUR_API_KEY_HERE') // (optional) TEXTLK_SMS_API_KEY can be added in .env
+    ->scheduleTime("YOUR_SCHEDULE_TIME_HERE"); // (optional) Your desired schedule time "2021-12-20T07:00:00Z". optional. "2021-12-20T07:00:00Z"
 
-$textLKMessage->send();
+$textLKSMS->send();
 ```
 
 # Laravel
@@ -38,10 +38,10 @@ $textLKMessage->send();
 public function toTextlk($notifiable)
 {
     return (new TextLK\SMS\TextLKSMSMessage)
-        ->recipient('YOUR_RECIPIENT_PHONE_NUMBERS_HERE') // or have multiple numbers: "recipient" => "+9476000000,+9476111000"
-        ->message('YOUR_MESSAGE_HERE')
+        ->recipient("94712345678") // Replace with the recipient's phone number. If have multiple numbers: "recipient" => "+9476000000,+9476111000"
+        ->message('Hello, this is a test message.')
+        ->senderId('YOUR_SENDER_ID') // optional. TEXTLK_SMS_SENDER_ID can be added in .env
         ->apiKey('YOUR_API_KEY_HERE') // optional. TEXTLK_SMS_API_KEY can be added in .env
-        ->senderId('YOUR_SENDER_ID_KEY_HERE') // optional. TEXTLK_SMS_SENDER_ID can be added in .env
         ->scheduleTime('YOUR_SCHEDULE_TIME_HERE'); // optional. "2021-12-20T07:00:00Z"
 }
 ```
