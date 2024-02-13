@@ -23,11 +23,10 @@ use TextLK\SMS\TextLKSMSMessage;
 $textLKSMS = new TextLKSMSMessage();
 
 $textLKSMS
-    ->recipient("94712345678") // Replace with the recipient's phone number. If have multiple numbers: "recipient" => "+9476000000,+9476111000"
+    ->recipient("94712345678") // Replace with the recipient's phone number.
     ->message("Hello, this is a test message.")
     ->senderId("YOUR_SENDER_ID") // (optional) TEXTLK_SMS_SENDER_ID can be added in .env
     ->apiKey('YOUR_API_KEY_HERE') // (optional) TEXTLK_SMS_API_KEY can be added in .env
-    ->scheduleTime("YOUR_SCHEDULE_TIME_HERE"); // (optional) Your desired schedule time. eg: "2021-12-20T07:00:00Z"
 
 $textLKSMS->send();
 ```
@@ -38,11 +37,10 @@ $textLKSMS->send();
 public function toTextlk($notifiable)
 {
     return (new \TextLK\SMS\TextLKSMSMessage)
-        ->recipient("94712345678") // Replace with the recipient's phone number. If have multiple numbers: "recipient" => "+9476000000,+9476111000"
+        ->recipient("94712345678") // Replace with the recipient's phone number.
         ->message('Hello, this is a test message.')
         ->senderId('YOUR_SENDER_ID') // optional. TEXTLK_SMS_SENDER_ID can be added in .env
         ->apiKey('YOUR_API_KEY_HERE') // optional. TEXTLK_SMS_API_KEY can be added in .env
-        ->scheduleTime('YOUR_SCHEDULE_TIME_HERE'); // (optional) Your desired schedule time. eg: "2021-12-20T07:00:00Z"
 }
 ```
 

@@ -9,7 +9,6 @@ class TextLKSMSMessage
     protected $message;
     protected $recipient;
     protected $sender_id;
-    protected $schedule_time;
     protected $api_key;
     private const API_URL = "https://app.text.lk/api/v3/";
 
@@ -40,12 +39,6 @@ class TextLKSMSMessage
         return $this;
     }
     
-    public function scheduleTime($schedule_time = "")
-    {
-        $this->schedule_time = $schedule_time;
-        return $this;
-    }
-    
     public function apiKey($api_key = "")
     {
         if(!empty($api_key)) {
@@ -60,7 +53,6 @@ class TextLKSMSMessage
             $message = $this->message;
             $recipient = $this->recipient;
             $sender_id = $this->sender_id;
-            $schedule_time = $this->schedule_time;
             $api_key = $this->api_key;
             
             if (empty($api_key)) {
@@ -81,8 +73,7 @@ class TextLKSMSMessage
             $data = array(
                 "recipient" => $recipient,
                 "sender_id" => $sender_id,
-                "message" => $message,
-                "schedule_time" => $schedule_time,
+                "message" => $message
             );
             
             $response = $this->sendServerResponse('sms/send', $data, 'POST');

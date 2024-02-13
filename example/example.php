@@ -14,11 +14,10 @@ $api_key = 'YOUR_API_KEY';
 $SMS = new SMS($api_key);
 
 $data = array(
-    "recipient" => "9476000000", // or have multiple numbers: "recipient" => "+9476000000,+9476111000"
+    "recipient" => "9476000000",
     "sender_id" => "TEXTLK",
     "type" => "plain",
     "message" => "Boom! Message from Text.lk"
-    // "schedule_time" => "2021-12-20T07:00:00Z"
 );
 
 echo $SMS->send($data);
