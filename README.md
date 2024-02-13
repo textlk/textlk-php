@@ -27,6 +27,6 @@ public function toTextlk($notifiable)
         ->message('YOUR_MESSAGE_HERE')
         ->apiKey('YOUR_API_KEY_HERE') // optional. TEXTLK_SMS_API_KEY can be added in .env
         ->senderId('YOUR_SENDER_ID_KEY_HERE') // optional. TEXTLK_SMS_SENDER_ID can be added in .env
-        ->scheduleTime('YOUR_SCHEDULE_TIME_HERE'); optional. // "2021-12-20T07:00:00Z"
+        ->scheduleTime('YOUR_SCHEDULE_TIME_HERE'); // optional. "2021-12-20T07:00:00Z"
 }
 ```
