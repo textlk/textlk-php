@@ -1,6 +1,6 @@
 {
     "name": "textlk/textlk-php",
-    "description": "Text.lk - SMS Gateway Sri Lanka",
+    "description": "PHP SDK for Text.lk - SMS Gateway Sri Lanka",
     "type": "library",
     "license": "MIT",
     "autoload": {
