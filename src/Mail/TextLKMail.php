@@ -1,6 +1,6 @@
 <?php
 
-namespace TextLK\Laravel\Mail;
+namespace TextLK\Mail;
 
 use Illuminate\Mail\Mailable;
 

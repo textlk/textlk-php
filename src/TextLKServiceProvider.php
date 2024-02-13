@@ -1,6 +1,6 @@
 <?php
 
-namespace TextLK\Laravel;
+namespace TextLK;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Notifications\ChannelManager;
