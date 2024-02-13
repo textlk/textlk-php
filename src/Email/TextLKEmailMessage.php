@@ -1,6 +1,6 @@
 <?php
 
-namespace TextLK\Laravel\Email;
+namespace TextLK\Email;
 
 class TextLKEmailMessage
 {
