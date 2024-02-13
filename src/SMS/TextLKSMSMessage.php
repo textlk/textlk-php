@@ -71,7 +71,7 @@ class TextLKSMSMessage
             }
             
             if (empty($sender_id)) {
-                $errorMessage = 'API key cannot be empty. Set it in the constructor or add TEXTLK_SMS_SENDER_ID in .env';
+                $errorMessage = 'Sender ID cannot be empty. Set it in the constructor or add TEXTLK_SMS_SENDER_ID in .env';
                 throw new \InvalidArgumentException($errorMessage);
             }
             
