@@ -37,7 +37,7 @@ $textLKSMS->send();
 ```php
 public function toTextlk($notifiable)
 {
-    return (new TextLK\SMS\TextLKSMSMessage)
+    return (new \TextLK\SMS\TextLKSMSMessage)
         ->recipient("94712345678") // Replace with the recipient's phone number. If have multiple numbers: "recipient" => "+9476000000,+9476111000"
         ->message('Hello, this is a test message.')
         ->senderId('YOUR_SENDER_ID') // optional. TEXTLK_SMS_SENDER_ID can be added in .env
