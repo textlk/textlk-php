@@ -40,7 +40,7 @@ public function toTextlk($notifiable)
         ->recipient("94712345678") // Replace with the recipient's phone number.
         ->message('Hello, this is a test message.')
         ->senderId('YOUR_SENDER_ID') // optional. TEXTLK_SMS_SENDER_ID can be added in .env
-        ->apiKey('YOUR_API_KEY_HERE') // optional. TEXTLK_SMS_API_KEY can be added in .env
+        ->apiKey('YOUR_API_KEY_HERE'); // optional. TEXTLK_SMS_API_KEY can be added in .env
 }
 ```
 
